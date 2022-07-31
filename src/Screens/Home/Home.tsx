@@ -1,10 +1,14 @@
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React, {FC} from 'react';
 
-export default function Home() {
+import MediaSection from '../../Components/MediaSection/MediaSection';
+
+const Home: FC = () => {
   return (
     <View>
-      <Text>Home</Text>
+      <MediaSection />
     </View>
   );
-}
+};
+
+export default Home;

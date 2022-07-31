@@ -1,12 +1,14 @@
-import React from 'react';
-import {View, TouchableOpacity, Image} from 'react-native';
+import React, {FC} from 'react';
+import {View, TouchableOpacity, Image, Text} from 'react-native';
+import {MediaCardProps} from './MediaCard.interface';
 
-const MediaCard = () => {
+const MediaCard: FC<MediaCardProps> = props => {
   return (
     <TouchableOpacity>
       <View>
-        <Image source={} />
+        <Image source={{uri: props.imageSource}} />
       </View>
+      <Text>{props.title}</Text>
     </TouchableOpacity>
   );
 };

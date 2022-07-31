@@ -1,6 +1,5 @@
-export interface MediaCard {
-  mediaId: string;
-  title: string;
+export interface MediaCardProps {
+  mediaId?: string;
   imageSource: string;
-  rating: number;
+  title: string;
 }
