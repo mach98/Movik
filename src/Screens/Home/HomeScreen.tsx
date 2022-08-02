@@ -3,7 +3,7 @@ import React, {FC} from 'react';
 
 import MediaSection from '../../Components/MediaSection/MediaSection';
 
-const Home: FC = () => {
+const HomeScreen: FC = () => {
   return (
     <View style={styles.container}>
       <MediaSection />
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default HomeScreen;

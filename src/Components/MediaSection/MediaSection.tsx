@@ -8,6 +8,7 @@ const MediaSection: FC = () => {
     <FlatList
       horizontal
       data={data}
+      showsHorizontalScrollIndicator={false}
       renderItem={({item}) => {
         return (
           <TouchableOpacity>
