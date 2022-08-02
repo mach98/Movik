@@ -1,5 +1,5 @@
 export interface MediaCardProps {
   mediaId?: string;
-  imageSource: string;
+  poster: string;
   title: string;
 }

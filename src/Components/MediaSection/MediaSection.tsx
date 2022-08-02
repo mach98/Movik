@@ -6,11 +6,12 @@ import data from '../../data/mockData';
 const MediaSection: FC = () => {
   return (
     <FlatList
+      horizontal
       data={data}
       renderItem={({item}) => {
         return (
           <TouchableOpacity>
-            <MediaCard imageSource={item.Images[0]} title={item.Title} />
+            <MediaCard poster={item.Poster} title={item.Title} />
           </TouchableOpacity>
         );
       }}
