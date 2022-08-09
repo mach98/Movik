@@ -1,3 +1,4 @@
-export interface MediaSection {
-    
+export interface IMediaSection {
+    style: {};
+
 }

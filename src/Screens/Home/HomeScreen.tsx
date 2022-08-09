@@ -3,20 +3,23 @@ import React, {FC} from 'react';
 
 import MediaSection from '../../Components/MediaSection/MediaSection';
 import MediaBanner from '../../Components/MediaBanner/MediaBanner';
+import NavBar from '../../Components/Navbar/NavBar';
 
 const HomeScreen: FC = () => {
   return (
     <View style={styles.container}>
       <MediaBanner/>
-      <MediaSection />
+      <NavBar/>
+      <MediaSection/>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'grey',
     flex: 1,
+    backgroundColor: 'black',
+    flexDirection: 'column',
   },
 });
 

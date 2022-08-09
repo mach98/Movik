@@ -16,8 +16,7 @@ function App() {
 
 const styles = StyleSheet.create({
   safeArea: {
-    flex: 1,
-    overflow: 'hidden',
+    flex: 1,  
   },
 });
 

@@ -1,10 +1,11 @@
 import React, {FC} from 'react';
-import {FlatList, TouchableOpacity} from 'react-native';
+import {FlatList, TouchableOpacity, View, StyleSheet} from 'react-native';
 import MediaCard from '../MediaCard/MediaCard';
 import data from '../../data/mockData';
 
 const MediaSection: FC = () => {
   return (
+    <View style={styles.section}>
     <FlatList
       horizontal
       data={data}
@@ -17,7 +18,14 @@ const MediaSection: FC = () => {
         );
       }}
     />
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  section: {
+    flexDirection: 'row',
+  }
+});
 
 export default MediaSection;
