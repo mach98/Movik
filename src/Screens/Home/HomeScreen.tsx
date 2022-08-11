@@ -8,8 +8,10 @@ import NavBar from '../../Components/Navbar/NavBar';
 const HomeScreen: FC = () => {
   return (
     <View style={styles.container}>
+      <View>
       <NavBar/>
       <MediaBanner/>
+      </View>
       <MediaSection/>
     </View>
   );
