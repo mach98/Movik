@@ -25,6 +25,8 @@ const MediaSection: FC = () => {
 const styles = StyleSheet.create({
   section: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    
   }
 });
 
