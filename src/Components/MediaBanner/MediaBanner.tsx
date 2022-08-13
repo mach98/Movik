@@ -2,20 +2,12 @@ import React, {FC, useState, useEffect} from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
 import { Card } from 'react-native-paper';
 
+import { IMediaBanner } from './MediaBanner.interface';
 
-import data from '../../data/mockData';
-import {randomiseBanner} from '../../Helper/ramdomiseBanner';
-
-const MediaBanner: FC = () => {
-  const [currentBanner, setCurrentBanner] = useState('');
-  useEffect(() => {
-    const val = randomiseBanner(data.length);
-    setCurrentBanner(data[val].Poster);
-  }, []);
-
+const MediaBanner: FC<IMediaBanner> = ({poster}) => {
   return (
     <View style={styles.banner}>
-      <Image source={{uri: currentBanner}} style={styles.bannerImg} />
+      <Image source={{uri: poster}} style={styles.bannerImg} />
     </View>
   );
 };

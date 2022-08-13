@@ -1,5 +1,6 @@
 import React, {FC} from "react";
 import {Text, View, FlatList} from 'react-native';
+import data from "../../data/mockData";
 
 const GenreBar: FC = () => {
     return (
