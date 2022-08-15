@@ -2,8 +2,10 @@ import React, {FC} from 'react';
 import {FlatList, TouchableOpacity, View, StyleSheet} from 'react-native';
 import MediaCard from '../MediaCard/MediaCard';
 import data from '../../data/mockData';
+import { IMediaBanner } from '../MediaBanner/MediaBanner.interface';
 
-const MediaSection: FC = () => {
+
+const MediaSection: FC<IMediaBanner> = () => {
   return (
     <View style={styles.section}>
     <FlatList

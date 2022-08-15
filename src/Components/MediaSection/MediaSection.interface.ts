@@ -1,4 +1,3 @@
 export interface IMediaSection {
-    style: {};
-
+    posters: string[];
 }

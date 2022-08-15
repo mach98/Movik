@@ -1,4 +1,4 @@
-import React, {FC, useState, useEffect} from 'react';
+import React, {FC} from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
 import { Card } from 'react-native-paper';
 
@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   bannerImg: {
     width: '96%', 
     height: 350, 
+    resizeMode: 'cover'
   }
 });
 
