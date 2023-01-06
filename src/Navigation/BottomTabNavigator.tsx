@@ -1,6 +1,7 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import HomeStackNavigator from './HomeStackNavigator';
 import GamesStackNavigator from './GamesStackNavigator';
@@ -29,6 +30,20 @@ const BottomTabNavigator = () => {
             <Icon name="gamepad" size={30} color={focused ? 'red' : 'black'} />
           ),
           tabBarLabel: () => <Text>Games</Text>,
+        }}
+      />
+      <Tab.Screen
+        name="Shorts"
+        component={GamesStackNavigator}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <Icon2
+              name="animation-play-outline"
+              size={30}
+              color={focused ? 'red' : 'black'}
+            />
+          ),
+          tabBarLabel: () => <Text>Shorts</Text>,
         }}
       />
     </Tab.Navigator>
