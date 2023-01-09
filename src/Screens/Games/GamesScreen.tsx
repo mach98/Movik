@@ -1,10 +1,14 @@
-import React, {FC} from 'react';
+import React, {FC, useContext} from 'react';
 import {View, Text} from 'react-native';
 
+import MoviesContext from '../../Context/moviesContext';
+
 const GamesScreen: FC = () => {
+  const value = useContext(MoviesContext);
+
   return (
     <View>
-      <Text>Games!!!</Text>
+      <Text>{value}</Text>
     </View>
   );
 };

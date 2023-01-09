@@ -4,19 +4,23 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import BottomTabNavigator from './src/Navigation/BottomTabNavigator';
 
+import {MoviesProvider} from './src/Context/moviesContext';
+
 function App() {
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <NavigationContainer>
-        <BottomTabNavigator />
-      </NavigationContainer>
-    </SafeAreaView>
+    <MoviesProvider>
+      <SafeAreaView style={styles.safeArea}>
+        <NavigationContainer>
+          <BottomTabNavigator />
+        </NavigationContainer>
+      </SafeAreaView>
+    </MoviesProvider>
   );
 }
 
 const styles = StyleSheet.create({
   safeArea: {
-    flex: 1,  
+    flex: 1,
   },
 });
 
