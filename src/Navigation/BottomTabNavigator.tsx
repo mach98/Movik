@@ -7,7 +7,13 @@ import HomeStackNavigator from './HomeStackNavigator';
 import GamesStackNavigator from './GamesStackNavigator';
 import {Text} from 'react-native';
 
-const Tab = createBottomTabNavigator();
+export type BottomTabStackParamsList = {
+  Home: undefined;
+  Games: undefined;
+  Shorts: undefined;
+};
+
+const Tab = createBottomTabNavigator<BottomTabStackParamsList>();
 
 const BottomTabNavigator = () => {
   return (
