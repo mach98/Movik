@@ -1,3 +1,7 @@
+import {NavigationProp, ParamListBase} from '@react-navigation/native';
+
 export interface IMediaSection {
-    posters: string[];
+  category: string;
+  poster: string;
+  // navigation: NavigationProp<ParamListBase>;
 }

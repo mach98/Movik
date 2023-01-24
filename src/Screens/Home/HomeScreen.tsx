@@ -1,62 +1,47 @@
-import {View, StyleSheet} from 'react-native';
-import React, {FC, useState, useEffect, useContext} from 'react';
+import {View} from 'react-native';
+import React, {FC, useState, useEffect} from 'react';
 
 import MediaSection from '../../Components/MediaSection/MediaSection';
 import MediaBanner from '../../Components/MediaBanner/MediaBanner';
 import NavBar from '../../Components/Navbar/NavBar';
 
+import {IDataObject} from './HomeScreen.interface';
 import data from '../../data/mockData';
 import {randomiseBanner} from '../../Helper/ramdomiseBanner';
 import {stripCommas} from '../../Helper/stripCommas';
-import MoviesContext from '../../Context/moviesContext';
 
 import styles from './HomeScreen.stylesheet';
-import {Text} from 'react-native-paper';
+import {CompositeNavigationProp, useNavigation} from '@react-navigation/native';
+import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
+import {BottomTabStackParamsList} from '../../Navigation/BottomTabNavigator';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {HomeStackParamsList} from '../../Navigation/HomeStackNavigator';
 
-interface IDataObject {
-  Title: string;
-  Year: string;
-  Rated: string;
-  Released: string;
-  Runtime: string;
-  Genre: string;
-  Director: string;
-  Writer: string;
-  Actors: string;
-  Plot: string;
-  Language: string;
-  Country: string;
-  Awards: string;
-  Poster: string;
-  Metascore: string;
-  imdbRating: string;
-  imdbVotes: string;
-  imdbID: string;
-  Type: string;
-  Response: string;
-  Images: string[];
+// export type HomeScreenNavigationProp = CompositeNavigationProp<
+//   BottomTabNavigationProp<BottomTabStackParamsList, 'Home'>,
+//   NativeStackNavigationProp<HomeStackParamsList>
+// >;
+
+export interface IData {
+  data: IDataObject;
 }
 
-interface IData {
-  data: IDataObject[];
-}
-
-const HomeScreen: FC = () => {
-  const [currentBanner, setCurrentBanner] = useState('');
-  const [movieContent, setMovieContent] = useState<IDataObject[]>();
-  //const [movieTitle, setMovieTitle] = useState('');
-
-  const value = useContext(MoviesContext);
+const HomeScreen: FC<IData> = () => {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<HomeStackParamsList>>();
+  const [currentBanner, setCurrentBanner] = useState<string>('');
+  const [category, setCategory] = useState<string>('');
+  const [poster, setPoster] = useState<string>('');
 
   //genre is coming as a string, separate them into an array
   //const [genre, setGenre] = useState([]);
   useEffect(() => {
     const val = randomiseBanner(data.length);
     setCurrentBanner(data[val].Poster);
-    if (data) {
-      // console.log(typeof data)
-      setMovieContent(data);
-    }
+    // if (data) {
+    //   // console.log(typeof data)
+    //   setMovieContent(data);
+    // }
   }, [data]);
 
   return (
@@ -65,7 +50,7 @@ const HomeScreen: FC = () => {
         <NavBar />
         <MediaBanner poster={currentBanner} />
       </View>
-      <MediaSection />
+      <MediaSection category={category} poster={poster} />
     </View>
   );
 };

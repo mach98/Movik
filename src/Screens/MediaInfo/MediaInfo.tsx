@@ -1,10 +1,16 @@
 import {View, Text} from 'react-native';
-import React from 'react';
+import styles from './MediaInfo.stylesheet';
+import React, {FC} from 'react';
+import {useRoute} from '@react-navigation/native';
 
-export default function MediaInfo() {
+const MediaInfo: FC = () => {
+  const route = useRoute();
+  const details = route.params;
   return (
     <View>
-      <Text>MediaInfo</Text>
+      <Text>{}</Text>
     </View>
   );
-}
+};
+
+export default MediaInfo;

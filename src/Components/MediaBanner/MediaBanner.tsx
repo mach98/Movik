@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
-import { Card } from 'react-native-paper';
+import {View, Image} from 'react-native';
 
-import { IMediaBanner } from './MediaBanner.interface';
+import styles from './MediaBanner.stylesheet';
+import {IMediaBanner} from './MediaBanner.interface';
 
 const MediaBanner: FC<IMediaBanner> = ({poster}) => {
   return (
@@ -11,19 +11,6 @@ const MediaBanner: FC<IMediaBanner> = ({poster}) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  banner:{
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginVertical: 5
-  },
-  bannerImg: {
-    width: '96%', 
-    height: 350, 
-    resizeMode: 'cover'
-  }
-});
 
 export default MediaBanner;
 
