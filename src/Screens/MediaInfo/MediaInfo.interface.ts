@@ -1,1 +1,3 @@
-export interface IMediaInfo {}
+export interface IMediaInfo {
+    
+}

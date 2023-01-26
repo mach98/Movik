@@ -8,9 +8,8 @@ import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {HomeStackParamsList} from '../../Navigation/HomeStackNavigator';
 
-const MediaSection: FC<IMediaSection> = () => {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<HomeStackParamsList>>();
+const MediaSection: FC<IMediaSection> = ({navigation}) => {
+  //const navigation =useNavigation<NativeStackNavigationProp<HomeStackParamsList>>();
   return (
     <View style={styles.section}>
       <FlatList
@@ -24,9 +23,7 @@ const MediaSection: FC<IMediaSection> = () => {
                 poster={item.Poster}
                 title={item.Title}
                 navigation={() =>
-                  navigation.navigate('MediaInfo', {
-                    Title: item.Title,
-                  })
+                  navigation.navigate('MediaInfo', item)
                 }
               />
             </TouchableOpacity>

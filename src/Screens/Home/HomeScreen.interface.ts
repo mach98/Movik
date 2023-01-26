@@ -21,3 +21,5 @@ export interface IDataObject {
   Response?: string;
   Images?: string[];
 }
+
+

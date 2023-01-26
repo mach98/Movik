@@ -27,8 +27,7 @@ export interface IData {
 }
 
 const HomeScreen: FC<IData> = () => {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<HomeStackParamsList>>();
+  //const navigation =useNavigation<NativeStackNavigationProp<HomeStackParamsList>>();
   const [currentBanner, setCurrentBanner] = useState<string>('');
   const [category, setCategory] = useState<string>('');
   const [poster, setPoster] = useState<string>('');
