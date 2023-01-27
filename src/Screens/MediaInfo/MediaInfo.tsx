@@ -7,15 +7,14 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { HomeStackParamsList } from '../../Navigation/HomeStackNavigator';
 import {IMediaInfo} from './MediaInfo.interface';
 
-const MediaInfo: FC<IMediaInfo> = (props,{navigation}) => {
+const MediaInfo: FC<IMediaInfo> = (props,{navigation,route}) => {
   //const route = useRoute();
   //const details = route.params;
   //const navigation =useNavigation<NativeStackNavigationProp<HomeStackParamsList>>();
   const {Title}=props.route.params.item
- //const item=props.route.params.item
   return (
     <View>
-      <Text>{navigation.setParams('Title')}</Text>
+      <Text>{Title}</Text>
     </View>
   );
 };

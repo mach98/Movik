@@ -49,7 +49,7 @@ const HomeScreen: FC<IData> = () => {
         <NavBar />
         <MediaBanner poster={currentBanner} />
       </View>
-      <MediaSection category={category} poster={poster} />
+      <MediaSection category={category} poster={poster} navigation={undefined} />
     </View>
   );
 };
